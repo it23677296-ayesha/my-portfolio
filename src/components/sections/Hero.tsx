@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaMobile, FaDatabase, FaDownload } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const downloadCV = () => {
@@ -44,12 +45,16 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center">
-          <a href="/projects" className="btn-primary">
+          {/* View My Work - React Router Link */}
+          <Link to="/projects" className="btn-primary">
             View My Work
-          </a>
-          <a href="/contact" className="btn-outline">
+          </Link>
+          
+          {/* Contact Me - React Router Link */}
+          <Link to="/contact" className="btn-outline">
             Contact Me
-          </a>
+          </Link>
+          
           <button 
             onClick={downloadCV} 
             className="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:shadow-indigo-300 transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2"
