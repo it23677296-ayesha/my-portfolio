@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import ThemeToggle from '../common/ThemeToggle'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +17,6 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
-          {/* Profile Photo - AG වෙනුවට */}
           <img 
             src="/profile.jpeg" 
             alt="Ayesha Gayanthi"
@@ -44,6 +44,8 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          <ThemeToggle />
 
           <button
             className="md:hidden text-2xl text-slate-700 dark:text-slate-300"

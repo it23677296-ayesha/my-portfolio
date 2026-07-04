@@ -40,8 +40,11 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
-              <h4 className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg mb-3 border-b-2 border-slate-200 dark:border-slate-700 pb-2">
+            <div
+              key={index}
+              className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md dark:shadow-slate-800/50 border-l-8 border-indigo-600 dark:border-indigo-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <h4 className="font-semibold text-lg mb-3 border-b-2 border-slate-200 dark:border-slate-700 pb-2 text-indigo-600 dark:text-indigo-400">
                 <i className={`fas ${category.icon} mr-2`}></i> {category.title}
               </h4>
               <div className="flex flex-wrap gap-2">

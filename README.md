@@ -31,6 +31,7 @@ I built this project end-to-end — component architecture, Tailwind design syst
 |---|---|
 | 📱 Fully responsive | Mobile-first layout tested across breakpoints (`sm`, `md`, `lg`) using Tailwind's responsive utilities |
 | 🧭 Client-side routing | Multi-page navigation (Home, About, Projects, Contact) via React Router DOM with active-link highlighting, no full page reloads |
+| 🌗 Light/Dark mode toggle | Theme switcher in the navbar with preference saved in `localStorage` |
 | 🗂️ Categorized project showcase | Web projects (group work) and Mobile apps (individual work) shown separately, each with tech tags and a direct GitHub repo link |
 | 🧩 Component-based architecture | Reusable, isolated components under `layout/`, `sections/`, and `common/` for easy maintenance |
 | 🎯 Skills matrix | Skills grouped into 6 categories — Languages, Frontend, Backend, Database, Mobile, Tools |
@@ -77,8 +78,6 @@ portfolio/
 │   │        ├── Projects.tsx        #   - Web & mobile project cards
 │   │        ├── Education.tsx       #   - Academic background & coursework
 │   │        └── Contact.tsx         #   - Contact form with validation
-│   ├── data/
-│   │   └── index.ts                # Centralized site config (name, title, social links)
 │   ├── pages/                      # Route-level pages
 │   │   ├── Home.tsx
 │   │   ├── About.tsx
@@ -129,7 +128,7 @@ Relevant coursework: OOP · Data Structures & Algorithms · DBMS · Software Fra
 
 ## 🎨 Design Approach
 
-- **Design tokens** — a consistent indigo/purple accent palette on a slate neutral background, defined centrally in `tailwind.config.js` for easy theming
+- **Color system** — a consistent indigo/blue accent palette on a slate neutral background, applied through Tailwind utility classes and global overrides in `src/styles/index.css`
 - **Card-based layout** — projects and skills are presented as cards with hover states for a polished, interactive feel
 - **Section rhythm** — consistent vertical spacing (`py-16 md:py-20`) and section titles/subtitles across pages for visual consistency
 - **Accessibility-minded** — semantic HTML, `aria-label`s on icon-only buttons/links, sufficient color contrast, and descriptive link text (e.g. "View Repository") rather than generic "click here" links
@@ -165,7 +164,7 @@ The app will be available at `http://localhost:5173`.
 | `npm run dev` | Start the local development server with hot reload |
 | `npm run build` | Type-check with `tsc -b` and build for production |
 | `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across the project |
+| `npm run lint` | Run ESLint across the project (requires adding `eslint.config.js` for ESLint v9) |
 
 ---
 
@@ -185,7 +184,7 @@ To deploy your own copy:
 
 Planned improvements for future iterations:
 
-- [ ] Dark mode toggle (light/dark theme switch with saved preference)
+- [x] Dark mode toggle (light/dark theme switch with saved preference)
 - [ ] Scroll/entry animations (e.g. Framer Motion)
 - [ ] Backend integration for the contact form (currently client-side validated only)
 - [ ] Blog/notes section for technical write-ups

@@ -97,15 +97,13 @@ const ContactSection = () => {
   }
 
   return (
-    <section className="py-16 md:py-20 px-6">
+    <section className="py-16 md:py-20 px-6 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">Let's connect and discuss opportunities</p>
 
-        {/* Contact Cards - 3 Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {/* Email Card */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+          <div className="dark-card-blue bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md dark:shadow-slate-800/50 border-l-8 border-indigo-600 dark:border-indigo-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-2">
               <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
                 <FaEnvelope className="text-lg" />
@@ -117,8 +115,7 @@ const ContactSection = () => {
             </a>
           </div>
 
-          {/* Phone Card */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+          <div className="dark-card-blue bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md dark:shadow-slate-800/50 border-l-8 border-indigo-600 dark:border-indigo-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-2">
               <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
                 <FaPhone className="text-lg" />
@@ -130,8 +127,7 @@ const ContactSection = () => {
             </a>
           </div>
 
-          {/* Download CV Card */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+          <div className="dark-card-blue bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md dark:shadow-slate-800/50 border-l-8 border-indigo-600 dark:border-indigo-400 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
             <div className="flex items-center gap-3 mb-2">
               <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
                 <FaDownload className="text-lg" />
@@ -147,9 +143,8 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm dark:shadow-slate-800/50 transition-colors duration-300">
+          <div className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-md dark:shadow-slate-800/50 border border-slate-200 dark:border-slate-700 transition-colors duration-300">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
@@ -160,8 +155,10 @@ const ContactSection = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
-                    errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
+                  className={`w-full px-4 py-3 border-2 rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300 ${
+                    errors.name 
+                      ? 'border-red-500 ring-2 ring-red-500' 
+                      : 'border-slate-300 dark:border-slate-600 hover:border-indigo-400 dark:hover:border-indigo-500'
                   }`}
                   placeholder="Your name"
                   required
@@ -178,8 +175,10 @@ const ContactSection = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
-                    errors.email ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
+                  className={`w-full px-4 py-3 border-2 rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300 ${
+                    errors.email 
+                      ? 'border-red-500 ring-2 ring-red-500' 
+                      : 'border-slate-300 dark:border-slate-600 hover:border-indigo-400 dark:hover:border-indigo-500'
                   }`}
                   placeholder="your@email.com"
                   required
@@ -196,8 +195,10 @@ const ContactSection = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
-                    errors.message ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
+                  className={`w-full px-4 py-3 border-2 rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300 ${
+                    errors.message 
+                      ? 'border-red-500 ring-2 ring-red-500' 
+                      : 'border-slate-300 dark:border-slate-600 hover:border-indigo-400 dark:hover:border-indigo-500'
                   }`}
                   placeholder="Your message..."
                   required
