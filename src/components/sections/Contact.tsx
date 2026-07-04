@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaDownload } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaDownload } from 'react-icons/fa'
 import { useState } from 'react'
 
 const ContactSection = () => {
@@ -24,7 +24,6 @@ const ContactSection = () => {
     document.body.removeChild(link)
   }
 
-  // Form validation
   const validateForm = () => {
     let isValid = true
     const newErrors = { name: '', email: '', message: '' }
@@ -54,10 +53,7 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validate form
-    if (!validateForm()) {
-      return
-    }
+    if (!validateForm()) return
 
     setStatus('loading')
 
@@ -94,7 +90,6 @@ const ContactSection = () => {
       ...formData,
       [e.target.name]: e.target.value
     })
-    // Clear error when user starts typing
     setErrors({
       ...errors,
       [e.target.name]: ''
@@ -103,54 +98,61 @@ const ContactSection = () => {
 
   return (
     <section className="py-16 md:py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">Let's connect and discuss opportunities</p>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="bg-indigo-100 text-indigo-600 p-3 rounded-full">
-                <FaEnvelope className="text-xl" />
+        {/* Contact Cards - 3 Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {/* Email Card */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
+                <FaEnvelope className="text-lg" />
               </div>
-              <div>
-                <h4 className="font-semibold">Email</h4>
-                <a href="mailto:ayesha20021210@gmail.com" className="text-indigo-600 hover:underline">
-                  ayesha20021210@gmail.com
-                </a>
-              </div>
+              <h4 className="font-semibold text-slate-800 dark:text-white">Email</h4>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-indigo-100 text-indigo-600 p-3 rounded-full">
-                <FaPhone className="text-xl" />
-              </div>
-              <div>
-                <h4 className="font-semibold">Phone</h4>
-                <p className="text-slate-600">+94 77 123 4567</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-indigo-100 text-indigo-600 p-3 rounded-full">
-                <FaMapMarkerAlt className="text-xl" />
-              </div>
-              <div>
-                <h4 className="font-semibold">Location</h4>
-                <p className="text-slate-600">Bandaragama, Sri Lanka</p>
-              </div>
-            </div>
-
-            <button 
-              onClick={downloadCV} 
-              className="w-full bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:shadow-indigo-300 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center gap-2"
-            >
-              <FaDownload /> Download CV
-            </button>
+            <a href="mailto:ayesha20021210@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              ayesha20021210@gmail.com
+            </a>
           </div>
 
-          <div className="card">
+          {/* Phone Card */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
+                <FaPhone className="text-lg" />
+              </div>
+              <h4 className="font-semibold text-slate-800 dark:text-white">Phone</h4>
+            </div>
+            <a href="tel:+94770614999" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              +94 77 061 4999
+            </a>
+          </div>
+
+          {/* Download CV Card */}
+          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400 transition-colors duration-300">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2 rounded-full">
+                <FaDownload className="text-lg" />
+              </div>
+              <h4 className="font-semibold text-slate-800 dark:text-white">CV</h4>
+            </div>
+            <button 
+              onClick={downloadCV} 
+              className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+            >
+              Download CV
+            </button>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm dark:shadow-slate-800/50 transition-colors duration-300">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold mb-1">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -158,19 +160,17 @@ const ContactSection = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
-                    errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
+                    errors.name ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
                   }`}
                   placeholder="Your name"
                   required
                 />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                )}
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-1">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -178,19 +178,17 @@ const ContactSection = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
-                    errors.email ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
+                    errors.email ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
                   }`}
                   placeholder="your@email.com"
                   required
                 />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-1">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -198,32 +196,18 @@ const ContactSection = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
-                    errors.message ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300'
+                  className={`w-full px-4 py-2 border rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-colors duration-300 ${
+                    errors.message ? 'border-red-500 ring-1 ring-red-500' : 'border-slate-300 dark:border-slate-600'
                   }`}
                   placeholder="Your message..."
                   required
-                ></textarea>
-                {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-                )}
+                />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
               </div>
 
-              {status === 'loading' && (
-                <div className="text-indigo-600 text-center font-medium">
-                  ⏳ Sending message...
-                </div>
-              )}
-              {status === 'success' && (
-                <div className="text-green-600 text-center font-medium">
-                  ✅ Message sent successfully!
-                </div>
-              )}
-              {status === 'error' && (
-                <div className="text-red-600 text-center font-medium">
-                  ❌ Failed to send. Please try again.
-                </div>
-              )}
+              {status === 'loading' && <div className="text-indigo-600 dark:text-indigo-400 text-center font-medium">⏳ Sending message...</div>}
+              {status === 'success' && <div className="text-green-600 dark:text-green-400 text-center font-medium">✅ Message sent successfully!</div>}
+              {status === 'error' && <div className="text-red-600 dark:text-red-400 text-center font-medium">❌ Failed to send. Please try again.</div>}
 
               <button 
                 type="submit" 
@@ -233,7 +217,7 @@ const ContactSection = () => {
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
 
-              <p className="text-xs text-slate-400 text-center mt-2">
+              <p className="text-xs text-slate-400 dark:text-slate-500 text-center mt-2">
                 <span className="text-red-500">*</span> All fields are required
               </p>
             </form>

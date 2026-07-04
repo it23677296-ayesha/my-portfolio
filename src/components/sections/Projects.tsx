@@ -39,26 +39,26 @@ const ProjectsSection = () => {
         <h2 className="section-title">Projects</h2>
         <p className="section-subtitle">Some of the work I've built</p>
 
-        {/* Web Projects - Group */}
-        <h3 className="text-2xl font-bold text-slate-800 mb-4 border-b-2 border-indigo-200 pb-2 flex items-center gap-2">
-          🌐 Web Projects <span className="text-sm font-normal text-slate-500">(Group)</span>
+        {/* Web Projects */}
+        <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 border-b-2 border-indigo-200 dark:border-indigo-800 pb-2">
+          🌐 Web Projects <span className="text-sm font-normal text-slate-500 dark:text-slate-400">(Group)</span>
         </h3>
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {webProjects.map((project, index) => (
-            <div key={index} className="card border-l-4 border-indigo-600">
+            <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-indigo-600 dark:border-indigo-400">
               <div className="flex justify-between items-start">
-                <h3 className="text-xl font-bold text-slate-800 mb-1">{project.title}</h3>
-                <span className="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-1">{project.title}</h3>
+                <span className="text-xs bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-full">
                   {project.type}
                 </span>
               </div>
-              <p className="text-indigo-600 font-semibold text-sm mb-3">{project.tech}</p>
-              <p className="text-slate-700 text-sm md:text-base mb-4">{project.description}</p>
+              <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-3">{project.tech}</p>
+              <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base mb-4">{project.description}</p>
               <a 
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-indigo-600 font-semibold hover:underline inline-flex items-center gap-1 text-sm"
+                className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline inline-flex items-center gap-1 text-sm"
               >
                 View Repository <i className="fas fa-arrow-right text-xs"></i>
               </a>
@@ -66,26 +66,26 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Mobile Applications - Individual */}
-        <h3 className="text-2xl font-bold text-slate-800 mb-4 border-b-2 border-purple-200 pb-2 flex items-center gap-2">
-          📱 Mobile Applications <span className="text-sm font-normal text-slate-500">(Individual)</span>
+        {/* Mobile Projects */}
+        <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 border-b-2 border-purple-200 dark:border-purple-800 pb-2">
+          📱 Mobile Applications <span className="text-sm font-normal text-slate-500 dark:text-slate-400">(Individual)</span>
         </h3>
         <div className="grid md:grid-cols-2 gap-6">
           {mobileProjects.map((project, index) => (
-            <div key={index} className="card border-l-4 border-purple-600">
+            <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm dark:shadow-slate-800/50 border-l-4 border-purple-600 dark:border-purple-400">
               <div className="flex justify-between items-start">
-                <h3 className="text-xl font-bold text-slate-800 mb-1">{project.title}</h3>
-                <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-1">{project.title}</h3>
+                <span className="text-xs bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full">
                   {project.type}
                 </span>
               </div>
-              <p className="text-purple-600 font-semibold text-sm mb-3">{project.tech}</p>
-              <p className="text-slate-700 text-sm md:text-base mb-4">{project.description}</p>
+              <p className="text-purple-600 dark:text-purple-400 font-semibold text-sm mb-3">{project.tech}</p>
+              <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base mb-4">{project.description}</p>
               <a 
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-purple-600 font-semibold hover:underline inline-flex items-center gap-1 text-sm"
+                className="text-purple-600 dark:text-purple-400 font-semibold hover:underline inline-flex items-center gap-1 text-sm"
               >
                 View Repository <i className="fas fa-arrow-right text-xs"></i>
               </a>
