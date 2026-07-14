@@ -1,55 +1,53 @@
 # 🌐 Ayesha Gayanthi — Developer Portfolio
 
-A modern, responsive personal portfolio website showcasing my projects, skills, and background as a Full Stack Developer and 3rd-year IT undergraduate at SLIIT.
+A modern, responsive, multi-page personal portfolio website showcasing my projects, technical skills, and academic background as a Full Stack Developer and 3rd-year IT undergraduate at SLIIT.
 
-**Built with:** React 18 · TypeScript · Vite · Tailwind CSS · React Router · Deployed on Vercel
+**Built with:** React 18 · TypeScript · Vite 7 · Tailwind CSS 3 · React Router v6 · Deployed on Vercel
 
 **🔗 Live site:** [my-portfolio-9rf2.vercel.app](https://my-portfolio-9rf2.vercel.app/)
 
 ---
 
-<img width="500" alt="Screenshot 2026-07-04 172515" src="https://github.com/user-attachments/assets/e17b3dad-6aec-45b4-bf46-2bc543284fee" />
-<img width="500" alt="Screenshot 2026-07-04 172534" src="https://github.com/user-attachments/assets/b7b24832-9e54-49fd-83fb-f186bb717b59" />
-<img width="500" alt="Screenshot 2026-07-04 172558" src="https://github.com/user-attachments/assets/f08c56a5-6c2b-47e4-bc9c-b094fe24c0b6" />
-<img width="500" alt="Screenshot 2026-07-04 172618" src="https://github.com/user-attachments/assets/ce77bb58-a247-477f-8130-aa37ce01cf11" />
+<img width="400" height="1723" alt="portfolio-light-mode" src="https://github.com/user-attachments/assets/4bc00d2d-824e-403a-826f-90138cb7a54f" />
+<img width="400" height="1723" alt="portfolio-dark-mode" src="https://github.com/user-attachments/assets/4c7b076f-8538-4698-8fc2-282b1691f46d" />
+<img width="400" height="600" alt="contact-dark-mode" src="https://github.com/user-attachments/assets/30613aa7-10f8-401a-b9a8-fe9dfdb3d572" />
+<img width="400" height="600" alt="contact-light-mode" src="https://github.com/user-attachments/assets/1a0f4e23-4fcb-43da-88d1-4ba2c64d0d92" />
 
 ---
 
 ## ✨ Overview
 
-This is a multi-page portfolio built from scratch with **React + TypeScript + Vite**, styled entirely with **Tailwind CSS**, and routed with **React Router**. Rather than a single long scrolling page, it's structured as a proper multi-route site with dedicated Home, About, Projects, and Contact pages — closer to how a real product website is organized.
+This is a multi-page portfolio built from scratch with **React + TypeScript + Vite**, styled entirely with **Tailwind CSS**, and routed with **React Router**. Instead of one long scrolling page, it's structured as a proper multi-route site — `Home`, `About`, `Projects`, and `Contact` — closer to how a real product website is organized.
 
-The site brings together my academic background at SLIIT, a categorized breakdown of my technical skills (languages, frontend, backend, database, mobile, and tools), and a showcase of both my group university projects and individual Android apps. It also includes a fully working contact form wired up to Formspree, and a one-click CV download so recruiters or visitors can grab my resume directly without needing to ask.
+The site brings together my SLIIT academic background, a categorized breakdown of my technical skills (languages, frontend, backend, database, mobile, and tools), and a showcase of both group university projects and individual Android apps. It includes a fully working contact form wired up to **Formspree**, a one-click CV download, and a **light/dark theme toggle** with the preference persisted to `localStorage`.
 
-The design leans on a dark, indigo-accented aesthetic with full dark-mode class support throughout every component, smooth hover/scroll micro-interactions, and a fully responsive layout that collapses into a mobile hamburger menu on smaller screens. It's deployed on Vercel with proper SPA rewrite rules so every route — not just the homepage — works correctly on direct load or refresh.
+The design uses an indigo/purple accent on a clean slate color base, with full dark-mode styling across every component via Tailwind's `dark:` variants, smooth hover/scroll micro-interactions, and a fully responsive layout that collapses into a mobile hamburger menu on smaller screens. It's deployed on Vercel with a SPA rewrite rule so every route — not just the homepage — loads correctly on direct visit or refresh.
 
 ---
 
 ## 🌟 Features
 
-- **Multi-page routing** — real routes (`/`, `/about`, `/projects`, `/contact`) instead of a single scrolling page, with `vercel.json` rewrites so deep links and page refreshes work correctly on Vercel.
-- **Dark mode support** — components are styled with Tailwind's `dark:` variants throughout (Navbar, sections, cards).
-- **Responsive design** — mobile-first layout with a collapsible hamburger menu in the Navbar and responsive grids for Skills/Projects.
-- **Animated Hero section** — gradient background, status badge ("Open to Internships"), quick-facts chips (React · Spring Boot, Android · Kotlin, MySQL · MongoDB), and a scroll-indicator animation.
-- **Working contact form** — client-side validation (required fields, email format) with loading/success/error states, submitted via **Formspree** so no custom backend is needed.
-- **One-click CV download** — a `Download CV` button on both the Hero and Contact sections triggers a direct download of `/cv/Ayesha_Gayanthi_CV.pdf`.
-- **Project showcase** — projects are split into **Web** and **Mobile** categories, each card tagged as *Group Project* or *Individual Project*, with tech stack, description, and a direct GitHub link.
-- **Social links** — GitHub, LinkedIn, and email icons in the Hero, all pointing to real profiles.
+- **Multi-page routing** — real routes (`/`, `/about`, `/projects`, `/contact`) instead of a single scrolling page, powered by React Router v6.
+- **Light/dark mode toggle** — a `ThemeContext` + `ThemeToggle` component manage theme state, persist the choice to `localStorage`, and toggle a `dark` class on `<html>` that Tailwind's `dark:` variants key off of. Defaults to light mode.
+- **Responsive design** — mobile-first layout with a collapsible hamburger menu in the `Navbar` and responsive grids across Skills/Projects sections.
+- **Animated Hero section** — gradient background, an "Open to Internships" status badge, quick-fact chips (React · Spring Boot, Android · Kotlin, MySQL · MongoDB), social links, and an animated scroll indicator.
+- **Working contact form** — client-side validation (required name/message, email format check) with `idle` / `loading` / `success` / `error` states, submitted via **Formspree** so no custom backend is required.
+- **One-click CV download** — a "Download CV" button on both the Hero and Contact sections triggers a direct download of `/cv/Ayesha_Gayanthi_CV.pdf`.
+- **Project showcase** — projects split into **Web** and **Mobile** categories, each tagged *Group Project* or *Individual Project*, with tech stack, description, and a direct GitHub link.
+- **Social links** — GitHub, LinkedIn, and email icons (via `react-icons`) in the Hero, Navbar, and Footer.
 
 ---
 
 ## 🧩 Pages
 
-The site is a proper multi-page SPA with four routes:
-
-| Route | Page | Description |
+| Route | Page | Renders |
 |---|---|---|
-| `/` | **Home** | Hero intro → About summary → Skills → Projects preview → Education |
-| `/about` | **About** | Extended background & bio |
-| `/projects` | **Projects** | Full project showcase (web + mobile) |
+| `/` | **Home** | Hero → About → Skills → Projects → Education |
+| `/about` | **About** | About → Skills → Education |
+| `/projects` | **Projects** | Full project showcase (Web + Mobile) |
 | `/contact` | **Contact** | Contact form + CV download |
 
-Navigation is handled via a responsive `Navbar` (with active-link highlighting via `NavLink`) and a shared `Footer` across all pages.
+Since `Home`, `About`, `Projects`, and `Contact` all compose the same underlying section components (`Hero`, `About`, `Skills`, `Projects`, `Education`, `Contact`), each section only has to be built once and is reused across pages. Navigation is handled via a sticky, responsive `Navbar` with active-link highlighting (`NavLink`) and a shared `Footer` on every page.
 
 ---
 
@@ -60,10 +58,11 @@ Navigation is handled via a responsive `Navbar` (with active-link highlighting v
 | Framework | React 18 + TypeScript |
 | Build tool | Vite 7 |
 | Routing | React Router DOM v6 |
-| Styling | Tailwind CSS 3.4 (with dark mode) |
-| Icons | react-icons (Font Awesome set) |
+| Styling | Tailwind CSS 3.4 (with `dark:` mode support) |
+| Icons | `react-icons` (Font Awesome set) |
+| Theme persistence | React Context + `localStorage` |
 | Form handling | Formspree (serverless form submissions) |
-| Linting | ESLint (with `typescript-eslint`, React Hooks & React Refresh plugins) |
+| Linting | ESLint (`typescript-eslint`, React Hooks & React Refresh plugins) |
 | Hosting | Vercel, with SPA rewrite rules |
 
 ---
@@ -74,33 +73,34 @@ Navigation is handled via a responsive `Navbar` (with active-link highlighting v
 portfolio/
 ├── public/
 │   ├── cv/
-│   │   └── Ayesha_Gayanthi_CV.pdf   # Downloadable CV
-│   ├── profile.jpeg                  # Profile photo
+│   │   └── Ayesha_Gayanthi_CV.pdf     # Downloadable CV
+│   ├── profile.jpeg                    # Profile photo
 │   └── vite.svg
 ├── src/
 │   ├── components/
 │   │   ├── common/
-│   │   │   └── Footer.tsx           # Site-wide footer with social links
+│   │   │   ├── Footer.tsx             # Site-wide footer with social links
+│   │   │   └── ThemeToggle.tsx        # Light/dark mode switch button
 │   │   ├── layout/
-│   │   │   └── Navbar.tsx           # Sticky navbar with mobile hamburger menu
-│   │   └── sections/                # Page sections
-│   │       ├── Hero.tsx             #   - Landing intro + CV download
-│   │       ├── About.tsx            #   - Bio & profile photo
-│   │       ├── Skills.tsx           #   - Categorized skills grid
-│   │       ├── Projects.tsx         #   - Web & mobile project cards
-│   │       ├── Education.tsx        #   - Academic background
-│   │       └── Contact.tsx          #   - Contact form with validation
-│   ├── data/
-│   │   └── index.ts                 # Centralized site config (name, title, social links)
-│   ├── pages/                       # Route-level pages
-│   │   ├── Home.tsx                 #   - "/"
-│   │   ├── About.tsx                #   - "/about"
-│   │   ├── Projects.tsx             #   - "/projects"
-│   │   └── Contact.tsx              #   - "/contact"
+│   │   │   └── Navbar.tsx             # Sticky navbar with mobile hamburger menu
+│   │   └── sections/                  # Reusable page sections
+│   │       ├── Hero.tsx               #   - Landing intro + CV download
+│   │       ├── About.tsx              #   - Bio & profile photo
+│   │       ├── Skills.tsx             #   - Categorized skills grid
+│   │       ├── Projects.tsx           #   - Web & mobile project cards
+│   │       ├── Education.tsx          #   - Academic background
+│   │       └── Contact.tsx            #   - Contact form with validation
+│   ├── context/
+│   │   └── ThemeContext.tsx           # Theme provider (light/dark + localStorage)
+│   ├── pages/                          # Route-level pages (compose sections above)
+│   │   ├── Home.tsx                    #   - "/"
+│   │   ├── About.tsx                   #   - "/about"
+│   │   ├── Projects.tsx                #   - "/projects"
+│   │   └── Contact.tsx                 #   - "/contact"
 │   ├── styles/
-│   │   └── index.css                # Global styles
-│   ├── App.tsx                      # Route definitions
-│   ├── main.tsx                     # App entry point
+│   │   └── index.css                   # Global styles & Tailwind directives
+│   ├── App.tsx                         # Route definitions
+│   ├── main.tsx                        # App entry point
 │   └── vite-env.d.ts
 ├── index.html
 ├── vite.config.ts
@@ -109,7 +109,7 @@ portfolio/
 ├── tsconfig.json
 ├── tsconfig.app.json
 ├── tsconfig.node.json
-├── vercel.json                       # SPA rewrite rules for Vercel
+├── vercel.json                         # SPA rewrite rule for Vercel
 ├── package.json
 ├── package-lock.json
 └── .gitignore
@@ -129,13 +129,13 @@ portfolio/
 | Project | Tech | Description | Link |
 |---|---|---|---|
 | **QuickBus** | Kotlin · XML · Android Studio | Android app for bus route search, schedule viewing, seat booking, and payments. Full end-to-end user flow with authentication, profile management, and bottom-navigation UI. | [GitHub](https://github.com/it23677296-ayesha/quick-bus-app) |
-| **TaskFlow** | Kotlin · MPAndroidChart · Android Studio | Productivity app with habit tracking, mood logging, hydration monitoring, and progress charts. Includes a home-screen widget, scheduled reminders, and local data persistence. | [GitHub](https://github.com/it23677296-ayesha/task-flow-app) |
+| **TaskFlow** | Kotlin · MPAndroidChart · WorkManager · Android Studio | Habit-tracker productivity app with mood logging, hydration monitoring, and progress charts. Includes scheduled reminders (via WorkManager) and local data persistence. | [GitHub](https://github.com/it23677296-ayesha/task-flow-app) |
 
 ---
 
 ## 🧠 Technical Skills
 
-Skills are grouped into categories on the **Skills** section of the Home page:
+Skills are grouped into categories on the **Skills** section:
 
 - **Languages:** Java, JavaScript, PHP, SQL, Kotlin
 - **Frontend:** React.js, HTML5 / CSS3, Bootstrap, Tailwind CSS
@@ -156,10 +156,11 @@ Oct 2023 – Present · 3rd Year
 
 ## 🎨 Design Notes
 
-- **Color palette:** Indigo/purple accent on a slate (dark) base, with a light-mode counterpart via Tailwind's `dark:` variants.
+- **Color palette:** Indigo/purple accent on a slate base — light mode uses white/slate-50 backgrounds, dark mode switches to slate-900/950 via Tailwind's `dark:` variants applied throughout every component.
+- **Theme system:** `ThemeContext` exposes `theme` and `toggleTheme`; on change it adds/removes the `dark` class on `document.documentElement` and writes the choice to `localStorage` so it persists across visits. Defaults to light mode on first load.
 - **Typography:** System UI stack (`Segoe UI`, `Tahoma`, `Geneva`, `Verdana`) configured in `tailwind.config.js` for consistent cross-platform rendering.
 - **Cards:** Left-border accent cards (`border-l-4`) used consistently across Skills, Projects, and other content blocks for a clean, scannable layout.
-- **Micro-interactions:** Hover lift effects on buttons, animated scroll-indicator on the Hero section, and smooth color-transition classes (`transition-colors duration-300`) for dark-mode toggling.
+- **Micro-interactions:** Hover-lift effects on buttons, an animated scroll indicator on the Hero, and `transition-colors duration-300` classes for smooth light/dark transitions.
 
 ---
 
@@ -177,7 +178,7 @@ npm run dev
 Other available scripts:
 
 ```bash
-npm run build     # Type-check + production build
+npm run build     # Type-check (tsc -b) + production build
 npm run preview   # Preview the production build locally
 npm run lint      # Run ESLint
 ```
@@ -198,19 +199,19 @@ Because this is a client-side-routed single-page app, a plain static deploy woul
 }
 ```
 
-This tells Vercel to always serve `index.html` and let React Router handle the routing client-side.
+This tells Vercel to always serve `index.html` and let React Router handle routing on the client.
 
 **To deploy your own copy:**
 1. Push the repo to GitHub.
 2. Import it into [Vercel](https://vercel.com/new).
 3. Framework preset: **Vite**. Build command: `npm run build`. Output directory: `dist`.
-4. Deploy — the `vercel.json` rewrites are picked up automatically.
+4. Deploy — the `vercel.json` rewrite is picked up automatically.
 
 ---
 
 ## 📬 Contact Form Setup
 
-The Contact page form posts to **Formspree** (`https://formspree.io/f/...`) via `fetch`, so there's no custom backend to maintain. Fields are validated client-side (name, valid email, message) before submission, with `idle` / `loading` / `success` / `error` states shown to the user. To reuse this for your own portfolio, swap in your own Formspree endpoint ID.
+The Contact section's form posts to **Formspree** via `fetch`, so there's no custom backend to maintain. Fields (name, email, message) are validated client-side before submission — required-field checks plus a regex email format check — with `idle` / `loading` / `success` / `error` states shown to the user throughout. To reuse this for your own portfolio, swap in your own Formspree endpoint.
 
 ---
 
@@ -221,6 +222,7 @@ The Contact page form posts to **Formspree** (`https://formspree.io/f/...`) via 
 - [ ] Add unit tests (Vitest + React Testing Library)
 - [ ] Add subtle page-transition animations between routes
 - [ ] SEO metadata (Open Graph tags, favicon set) for link previews
+- [ ] Centralize site content (name, links, project data) into a single `src/data` config file
 
 ---
 
@@ -237,4 +239,6 @@ The Contact page form posts to **Formspree** (`https://formspree.io/f/...`) via 
 
 ## 📄 License
 
-This project is for personal portfolio use. Feel free to reference the structure, but please don't copy the content/branding directly.
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details. Copyright (c) 2026 Ayesha Gayanthi.
+
+You're free to use, copy, modify, and distribute this code (even commercially), as long as the original copyright notice and license text are included. Note that this covers the *code* — please don't reuse the personal content (name, CV, project write-ups, photos) as your own.
